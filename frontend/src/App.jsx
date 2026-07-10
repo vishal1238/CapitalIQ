@@ -4,6 +4,8 @@ import { SearchX, Loader2 } from "lucide-react";
 import SearchBar from "./components/SearchBar";
 import ResultCard from "./components/ResultCard";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function App() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -15,12 +17,9 @@ export default function App() {
     setError("");
 
     try {
-      const response = await axios.post(
-        "https://capitaliq-0wzu.onrender.com/api/analyze",
-        {
-          company: companyName,
-        },
-      );
+      const response = await axios.post(`${API_URL}/api/analyze`, {
+        company: companyName,
+      });
       setResult(response.data);
     } catch (err) {
       const message =
