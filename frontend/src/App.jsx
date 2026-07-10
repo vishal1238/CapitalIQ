@@ -4,8 +4,6 @@ import { SearchX, Loader2 } from "lucide-react";
 import SearchBar from "./components/SearchBar";
 import ResultCard from "./components/ResultCard";
 
-const API_URL = import.meta.env.VITE_API_URL;
-
 export default function App() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -17,14 +15,11 @@ export default function App() {
     setError("");
 
     try {
-      const response = await axios.post(`${API_URL}/api/analyze`, {
-        company: companyName,
-      });
+      const response = await axios.post("/api/analyze", { company: companyName });
       setResult(response.data);
     } catch (err) {
       const message =
-        err.response?.data?.error ||
-        "Something went wrong. Make sure the backend is running.";
+        err.response?.data?.error || "Something went wrong. Make sure the backend is running.";
       setError(message);
     } finally {
       setLoading(false);
@@ -67,8 +62,8 @@ export default function App() {
               , Instantly.
             </h2>
             <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto font-light">
-              Enter any company name and let our AI analyze live financials and
-              market news to deliver a clear investment recommendation.
+              Enter any company name and let our AI analyze live financials and market news to
+              deliver a clear investment recommendation.
             </p>
           </div>
 
@@ -98,10 +93,7 @@ export default function App() {
           )}
 
           {result && !loading && (
-            <div
-              className="animate-slide-up mt-16"
-              style={{ animationDelay: "0.2s" }}
-            >
+            <div className="animate-slide-up mt-16" style={{ animationDelay: "0.2s" }}>
               <ResultCard data={result} />
             </div>
           )}
@@ -111,9 +103,7 @@ export default function App() {
               <div className="bg-slate-800/30 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5">
                 <SearchX className="w-8 h-8 text-slate-500" />
               </div>
-              <p className="text-sm font-medium">
-                Ready to analyze your next big opportunity.
-              </p>
+              <p className="text-sm font-medium">Ready to analyze your next big opportunity.</p>
             </div>
           )}
         </div>
