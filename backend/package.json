@@ -1,0 +1,23 @@
+{
+  "name": "capitaliq-backend",
+  "version": "1.0.0",
+  "description": "AI Investment Research Agent - Backend",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@langchain/groq": "^0.1.2",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "langchain": "^0.2.10",
+    "yahoo-finance2": "^3.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
