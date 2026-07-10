@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://capitaliq-frontend.onrender.com",
+    origin: process.env.FRONTEND_URL,
     methods: ["GET", "POST"],
   })
 );
