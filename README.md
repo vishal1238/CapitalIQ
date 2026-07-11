@@ -1,6 +1,6 @@
 # CapitalIQ — AI Investment Agent
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-CapitalIQ.ai-white?style=for-the-badge&logo=vercel&logoColor=black)](https://capitaliq.ai)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-CapitalIQ.ai-white?style=for-the-badge&logo=vercel&logoColor=black)](https://capitaliq-1.onrender.com)
 
 An AI-powered investment research agent. Enter any company name and get a live
 financial snapshot, recent news, and an LLM-generated **Invest / Pass**
